@@ -1,10 +1,12 @@
-package com.victorcuc.stormy;
+package com.victorcuc.stormy.weather;
+
+import com.victorcuc.stormy.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class CurrentWeather {
+public class Current {
     private String icon;
     private long time;
     private double temperature;
@@ -30,41 +32,7 @@ public class CurrentWeather {
     }
 
     public int getIconId() {
-        // clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day, or partly-cloudy-night
-        int iconId = R.drawable.clear_day;
-
-        if (icon.equals("clear-day")) {
-            iconId = R.drawable.clear_day;
-        }
-        else if (icon.equals("clear-night")) {
-            iconId = R.drawable.clear_night;
-        }
-        else if (icon.equals("rain")) {
-            iconId = R.drawable.rain;
-        }
-        else if (icon.equals("snow")) {
-            iconId = R.drawable.snow;
-        }
-        else if (icon.equals("sleet")) {
-            iconId = R.drawable.sleet;
-        }
-        else if (icon.equals("wind")) {
-            iconId = R.drawable.wind;
-        }
-        else if (icon.equals("fog")) {
-            iconId = R.drawable.fog;
-        }
-        else if (icon.equals("cloudy")) {
-            iconId = R.drawable.cloudy;
-        }
-        else if (icon.equals("partly-cloudy-day")) {
-            iconId = R.drawable.partly_cloudy;
-        }
-        else if (icon.equals("partly-cloudy-night")) {
-            iconId = R.drawable.cloudy_night;
-        }
-
-        return iconId;
+        return Forecast.getIconId(icon);
     }
 
     public long getTime() {
